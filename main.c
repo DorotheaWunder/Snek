@@ -1,7 +1,25 @@
 ﻿#include <stdio.h>
+#include "raylib.h"
+#include "gamemanager.h"
 
 int main(void)
 {
-    printf("Hello, World!\n");
+    InitGame();
+
+    while (!WindowShouldClose())
+    {
+        BeginDrawing();
+
+
+
+        ClearBackground(RAYWHITE);
+
+        DrawGame();
+
+        EndDrawing();
+    }
+
+    CloseWindow();
     return 0;
 }
+
