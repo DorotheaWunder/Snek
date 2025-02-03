@@ -6,6 +6,7 @@ void InitGame()
 {
     InitWindow(800, 800, "Snake");
     InitializeLevelGrid();
+    InitializeSnakeValues();
 }
 
 void UpdateGame()
@@ -16,4 +17,5 @@ void UpdateGame()
 void DrawGame()
 {
     DrawLevelGrid();
+    DrawSnake(&game.snake);
 }

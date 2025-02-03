@@ -5,11 +5,13 @@
 
 #include "grid.h"
 #include "visuals.h"
+#include "snake.h"
 
 
 typedef struct
 {
     Cell levelGrid[ROW][COL];
+    Snake snake;
     //other game elements
 } GameManager;
 
