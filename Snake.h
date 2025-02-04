@@ -23,5 +23,10 @@ typedef struct
 
 
 Snake InitializeSnakeValues();
-
+void GetInput(Snake *snake);
+void SetDirection(Snake *snake);
+void MoveSnake(Snake *snake);
+bool OutOfBounds(Snake *snake, int gridWidth, int gridHeight);
+void WrapMovement(Snake *snake, int gridWidth, int gridHeight);
+void ApplyFullMovement(Snake *snake, int gridWidth, int gridHeight);
 #endif //SNAKE_H

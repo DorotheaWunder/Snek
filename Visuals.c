@@ -38,8 +38,6 @@ void DrawLevelGrid()
 
 void DrawSnake(Snake *snake)
 {
-    //InitializeSnakeValues();
-    //DrawRectangle(6,6,10,10,GREEN);
     snake->snakeBody[0].cell_color = snake->snakeColor;
     DrawCell(&snake->snakeBody[0]);
 
