@@ -6,14 +6,14 @@
 void DrawCell(Cell *cell)
 {
     DrawRectangle(
-        cell->row,
-        cell->col,
+        cell->screenPosX,
+        cell->screenPosY,
         cell->size,
         cell->size,
         cell->cell_color
     );
 
-    Rectangle rectCell = { cell->row, cell->col, cell->size, cell->size };
+    Rectangle rectCell = { cell->screenPosX, cell->screenPosY, cell->size, cell->size };
 
     DrawRectangleLinesEx(
         (rectCell),
@@ -35,9 +35,12 @@ void DrawLevelGrid()
 
 void DrawSnake(Snake *snake)
 {
-    for (int i = 0; i < snake->bodySegments; i++)
-    {
-        snake->snakeBody[i].cell_color = snake->snakeColor;
-        DrawCell(&snake->snakeBody[i]);
-    }
+    //DrawRectangle(6,6,10,10,GREEN);
+    DrawCell(&snake);
+
+    // for (int i = 0; i < snake->bodySegments; i++)
+    // {
+    //     snake->snakeBody[i].cell_color = snake->snakeColor;
+    //     DrawCell(&snake->snakeBody[i]);
+    // }
 }

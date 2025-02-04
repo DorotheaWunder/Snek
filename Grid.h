@@ -18,6 +18,9 @@ typedef struct
     int row;
     int col;
 
+    int screenPosX;
+    int screenPosY;
+
     int size;
     CellContent content;
 
@@ -29,7 +32,7 @@ typedef struct
 extern Cell levelGrid[ROW][COL];
 
 
-Cell InitializeCellValues(int posX, int posY, int size, CellContent content);
+Cell InitializeCellValues(int row, int col, int size, CellContent content);
 void InitializeLevelGrid();
 
 #endif //GRID_H

@@ -16,6 +16,8 @@ int main(void)
 
         DrawGame();
 
+
+
         EndDrawing();
     }
 
