@@ -10,8 +10,8 @@ Cell InitializeCellValues(int row, int col, int size, CellContent content)
         .row = row,
         .col = col,
 
-        .screenPosX = col * size,
-        .screenPosY = row * size,
+        // .screenPosX = col * size,
+        // .screenPosY = row * size,
 
         .size = size,
         .content = content,

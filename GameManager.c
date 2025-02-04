@@ -6,7 +6,7 @@ void InitGame()
 {
     InitWindow(800, 800, "Snake");
     InitializeLevelGrid();
-    InitializeSnakeValues();
+    game.snake = InitializeSnakeValues();
 
 }
 

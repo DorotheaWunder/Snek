@@ -18,8 +18,8 @@ typedef struct
     int row;
     int col;
 
-    int screenPosX;
-    int screenPosY;
+    // int screenPosX;
+    // int screenPosY;
 
     int size;
     CellContent content;
