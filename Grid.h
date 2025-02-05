@@ -5,6 +5,7 @@
 
 #define ROW 20
 #define COL 20
+#define CELLSIZE 40
 
 typedef enum
 {
@@ -18,8 +19,8 @@ typedef struct
     int row;
     int col;
 
-    // int screenPosX;
-    // int screenPosY;
+    int screenPosX;
+    int screenPosY;
 
     int size;
     CellContent content;

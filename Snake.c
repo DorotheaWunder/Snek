@@ -6,10 +6,15 @@ Snake InitializeSnakeValues()
 {
     Snake snake;
 
-    snake.bodySegments = 1;
-    snake.snakeBody[0] = InitializeCellValues(1, 5, 40, SNAKE);
+    snake.bodySegments = 10;
     snake.snakeColor = GREEN;
     snake.direction = RIGHT;
+
+    snake.snakeBody[0] = InitializeCellValues(1, 5, CELLSIZE, SNAKE);
+    for (int i = 1; i < snake.bodySegments; i++)
+    {
+        snake.snakeBody[i] = InitializeCellValues(1, 5 - i, CELLSIZE, SNAKE);
+    }
 
     return snake;
 }
@@ -34,33 +39,8 @@ void GetInput(Snake *snake)
     }
 }
 
-void SetDirection(Snake *snake)
+void MoveHead(Snake *snake)
 {
-    int headRow = snake->snakeBody[0].row;
-    int headCol = snake->snakeBody[0].col;
-
-    switch (snake->direction)
-    {
-    case RIGHT:
-        headCol++;
-        break;
-    case LEFT:
-        headCol--;
-        break;
-    case UP:
-        headRow--;
-        break;
-    case DOWN:
-        headRow++;
-        break;
-    }
-}//--- check if used properly
-
-void MoveSnake(Snake *snake)
-{
-    int prevRow = snake->snakeBody[0].row;
-    int prevCol = snake->snakeBody[0].col;
-
     switch (snake->direction)
     {
     case RIGHT:
@@ -76,7 +56,10 @@ void MoveSnake(Snake *snake)
         snake->snakeBody[0].row++;
         break;
     }
+}
 
+void MoveBody(Snake *snake)
+{
     for (int i = snake->bodySegments - 1; i > 0; i--)
     {
         snake->snakeBody[i].row = snake->snakeBody[i - 1].row;
@@ -118,7 +101,8 @@ void WrapMovement(Snake *snake, int gridWidth, int gridHeight)
 void UpdateSnakePosition(Snake *snake, int gridWidth, int gridHeight)
 {
     GetInput(snake);
-    MoveSnake(snake);
+    MoveBody(snake);
+    MoveHead(snake);
 
     if (OutOfBounds(snake, gridWidth, gridHeight))
     {
@@ -126,4 +110,3 @@ void UpdateSnakePosition(Snake *snake, int gridWidth, int gridHeight)
     }
 }
 
-//and now put everything into a method that goes into Update

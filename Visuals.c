@@ -41,9 +41,9 @@ void DrawSnake(Snake *snake)
     snake->snakeBody[0].cell_color = snake->snakeColor;
     DrawCell(&snake->snakeBody[0]);
 
-    // for (int i = 0; i < snake->bodySegments; i++)
-    // {
-    //     snake->snakeBody[i].cell_color = snake->snakeColor;
-    //     DrawCell(&snake->snakeBody[i]);
-    // }
+    for (int i = 1; i < snake->bodySegments; i++)
+    {
+        snake->snakeBody[i].cell_color = snake->snakeColor;
+        DrawCell(&snake->snakeBody[i]);
+    }
 }

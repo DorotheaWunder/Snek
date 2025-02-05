@@ -10,10 +10,10 @@ Cell InitializeCellValues(int row, int col, int size, CellContent content)
         .row = row,
         .col = col,
 
-        // .screenPosX = col * size,
-        // .screenPosY = row * size,
+        .screenPosX = col * size,
+        .screenPosY = row * size,
 
-        .size = size,
+        .size = CELLSIZE,
         .content = content,
 
         .cell_color = BLACK,
@@ -24,13 +24,11 @@ Cell InitializeCellValues(int row, int col, int size, CellContent content)
 
 void InitializeLevelGrid()
 {
-    int cellSize = 40;
-
     for (int row = 0; row < ROW; row++)
     {
         for (int col = 0; col < COL; col++ )
         {
-            levelGrid[row][col] = InitializeCellValues(row, col, cellSize,EMPTY);
+            levelGrid[row][col] = InitializeCellValues(row, col, CELLSIZE,EMPTY);
         }
     }
 }
