@@ -25,5 +25,7 @@ typedef struct
 void InitGame();
 void UpdateGame();
 void DrawGame();
+void ResetGame(GameManager *game);
+void GameFlow(GameManager *game);
 
 #endif //GAMEMANAGER_H

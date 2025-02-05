@@ -110,3 +110,15 @@ void UpdateSnakePosition(Snake *snake, int gridWidth, int gridHeight)
     }
 }
 
+bool CollidedWithSelf(Snake *snake)
+{
+    int headRow = snake->snakeBody[0].row;
+    int headCol = snake->snakeBody[0].col;
+
+    if (levelGrid[headRow][headCol].content == SNAKE)
+    {
+        return true;
+    }
+
+    return false;
+}

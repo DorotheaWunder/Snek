@@ -37,3 +37,21 @@ void DrawGame()
     DrawLevelGrid();
     DrawSnake(&game.snake);
 }
+
+void ResetGame(GameManager *game)
+{
+    InitializeLevelGrid();
+    InitializeSnakeValues(&game->snake);
+}
+
+void GameFlow(GameManager *game)
+{
+    while (!CollidedWithSelf(&game->snake))
+    {
+        UpdateGame();
+        DrawGame();
+    }
+
+    DrawText("GAME OVER!", 350, 400, 20, RED);
+    ResetGame(game);
+}
