@@ -10,7 +10,14 @@
 
 typedef struct
 {
+    float deltaTime;
+    float moveTimer;
+    float moveDelay;
+
     Cell levelGrid[ROW][COL];
+    int gridWidth;
+    int gridHeight;
+
     Snake snake;
     //other game elements
 } GameManager;

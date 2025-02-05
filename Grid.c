@@ -24,7 +24,7 @@ Cell InitializeCellValues(int row, int col, int size, CellContent content)
 
 void InitializeLevelGrid()
 {
-    int cellSize = 80;
+    int cellSize = 40;
 
     for (int row = 0; row < ROW; row++)
     {

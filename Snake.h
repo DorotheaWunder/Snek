@@ -28,5 +28,5 @@ void SetDirection(Snake *snake);
 void MoveSnake(Snake *snake);
 bool OutOfBounds(Snake *snake, int gridWidth, int gridHeight);
 void WrapMovement(Snake *snake, int gridWidth, int gridHeight);
-void ApplyFullMovement(Snake *snake, int gridWidth, int gridHeight);
+void UpdateSnakePosition(Snake *snake, int gridWidth, int gridHeight);
 #endif //SNAKE_H

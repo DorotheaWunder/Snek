@@ -7,7 +7,7 @@ Snake InitializeSnakeValues()
     Snake snake;
 
     snake.bodySegments = 1;
-    snake.snakeBody[0] = InitializeCellValues(1, 5, 80, SNAKE);
+    snake.snakeBody[0] = InitializeCellValues(1, 5, 40, SNAKE);
     snake.snakeColor = GREEN;
     snake.direction = RIGHT;
 
@@ -54,7 +54,7 @@ void SetDirection(Snake *snake)
         headRow++;
         break;
     }
-}
+}//--- check if used properly
 
 void MoveSnake(Snake *snake)
 {
@@ -115,15 +115,14 @@ void WrapMovement(Snake *snake, int gridWidth, int gridHeight)
     }
 }
 
-void ApplyFullMovement(Snake *snake, int gridWidth, int gridHeight)
+void UpdateSnakePosition(Snake *snake, int gridWidth, int gridHeight)
 {
+    GetInput(snake);
+    MoveSnake(snake);
+
     if (OutOfBounds(snake, gridWidth, gridHeight))
     {
         WrapMovement(snake, gridWidth, gridHeight);
-    }
-    else
-    {
-        MoveSnake(snake);
     }
 }
 

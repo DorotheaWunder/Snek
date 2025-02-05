@@ -3,8 +3,8 @@
 
 #include "raylib.h"
 
-#define ROW 10
-#define COL 10
+#define ROW 20
+#define COL 20
 
 typedef enum
 {
