@@ -1,6 +1,6 @@
 ﻿#include "raylib.h"
 #include "grid.h"
-#include "snake.h"
+#include "SnakeArray.h"
 
 
 void DrawCell(Cell *cell)
@@ -36,14 +36,14 @@ void DrawLevelGrid()
     }
 }
 
-void DrawSnake(Snake *snake)
+void DrawSnakeArray(Snake *snake)
 {
-    snake->snakeBody[0].cell_color = snake->snakeColor;
+    snake->snakeBody[0].cell_color = snake->headColor;
     DrawCell(&snake->snakeBody[0]);
 
     for (int i = 1; i < snake->bodySegments; i++)
     {
-        snake->snakeBody[i].cell_color = snake->snakeColor;
+        snake->snakeBody[i].cell_color = snake->bodyColor;
         DrawCell(&snake->snakeBody[i]);
     }
 }

@@ -5,7 +5,7 @@
 
 #include "grid.h"
 #include "visuals.h"
-#include "snake.h"
+#include "SnakeArray.h"
 
 
 typedef struct

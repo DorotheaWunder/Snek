@@ -3,7 +3,7 @@
 
 #include "raylib.h"
 #include "grid.h"
-#include "snake.h"
+#include "SnakeArray.h"
 
 
 
@@ -11,6 +11,6 @@
 
 void DrawCell(Cell *cell);
 void DrawLevelGrid();
-void DrawSnake(Snake *snake);
+void DrawSnakeArray(Snake *snake);
 
 #endif //VISUALS_H

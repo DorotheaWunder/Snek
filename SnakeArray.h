@@ -17,8 +17,12 @@ typedef struct
 {
     int bodySegments;
     Cell snakeBody[MAXLENGTH];
+    int headIndex;
+    int tailIndex;
+
     Direction direction;
-    Color snakeColor;
+    Color bodyColor;
+    Color headColor;
 } Snake;
 
 

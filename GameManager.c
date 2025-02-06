@@ -35,13 +35,13 @@ void UpdateGame()
 void DrawGame()
 {
     DrawLevelGrid();
-    DrawSnake(&game.snake);
+    DrawSnakeArray(&game.snake);
 }
 
 void ResetGame(GameManager *game)
 {
     InitializeLevelGrid();
-    InitializeSnakeValues(&game->snake);
+    game->snake = InitializeSnakeValues();
 }
 
 void GameFlow(GameManager *game)

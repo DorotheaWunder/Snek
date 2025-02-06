@@ -81,9 +81,9 @@ build CMakeFiles/Snek.dir/GameManager.c.obj: C_COMPILER__Snek_unscanned_Debug C$
   OBJECT_DIR = CMakeFiles\Snek.dir
   OBJECT_FILE_DIR = CMakeFiles\Snek.dir
 
-build CMakeFiles/Snek.dir/Snake.c.obj: C_COMPILER__Snek_unscanned_Debug C$:/Users/Administratör/CLionProjects/Snek/Snake.c || cmake_object_order_depends_target_Snek
+build CMakeFiles/Snek.dir/SnakeArray.c.obj: C_COMPILER__Snek_unscanned_Debug C$:/Users/Administratör/CLionProjects/Snek/SnakeArray.c || cmake_object_order_depends_target_Snek
   DEFINES = -DGRAPHICS_API_OPENGL_33 -DPLATFORM_DESKTOP
-  DEP_FILE = CMakeFiles\Snek.dir\Snake.c.obj.d
+  DEP_FILE = CMakeFiles\Snek.dir\SnakeArray.c.obj.d
   FLAGS = -g -std=gnu99 -fdiagnostics-color=always
   INCLUDES = -IC:/Users/Administratör/CLionProjects/Snek/cmake-build-debug/_deps/raylib-src/src -IC:/Users/Administratör/CLionProjects/Snek/cmake-build-debug/_deps/raylib-src/src/external/glfw/include
   OBJECT_DIR = CMakeFiles\Snek.dir
@@ -97,7 +97,7 @@ build CMakeFiles/Snek.dir/Snake.c.obj: C_COMPILER__Snek_unscanned_Debug C$:/User
 #############################################
 # Link the executable Snek.exe
 
-build Snek.exe: C_EXECUTABLE_LINKER__Snek_Debug CMakeFiles/Snek.dir/main.c.obj CMakeFiles/Snek.dir/Grid.c.obj CMakeFiles/Snek.dir/Visuals.c.obj CMakeFiles/Snek.dir/GameManager.c.obj CMakeFiles/Snek.dir/Snake.c.obj | _deps/raylib-build/raylib/libraylib.a || _deps/raylib-build/raylib/external/glfw/src/glfw _deps/raylib-build/raylib/libraylib.a
+build Snek.exe: C_EXECUTABLE_LINKER__Snek_Debug CMakeFiles/Snek.dir/main.c.obj CMakeFiles/Snek.dir/Grid.c.obj CMakeFiles/Snek.dir/Visuals.c.obj CMakeFiles/Snek.dir/GameManager.c.obj CMakeFiles/Snek.dir/SnakeArray.c.obj | _deps/raylib-build/raylib/libraylib.a || _deps/raylib-build/raylib/external/glfw/src/glfw _deps/raylib-build/raylib/libraylib.a
   FLAGS = -g
   LINK_LIBRARIES = _deps/raylib-build/raylib/libraylib.a  -lopengl32  -lglu32  -lwinmm  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\Snek.dir

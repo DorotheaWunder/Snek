@@ -1,19 +1,30 @@
 ﻿#include "raylib.h"
 #include "grid.h"
-#include "snake.h"
+#include "SnakeArray.h"
 
 Snake InitializeSnakeValues()
 {
     Snake snake;
 
-    snake.bodySegments = 10;
-    snake.snakeColor = GREEN;
+    snake.bodySegments = 2;
+    snake.headIndex = 1;
+    snake.tailIndex = 0;
+
+    snake.bodyColor = DARKGREEN;
+    snake.headColor = GREEN;
     snake.direction = RIGHT;
 
-    snake.snakeBody[0] = InitializeCellValues(1, 5, CELLSIZE, SNAKE);
-    for (int i = 1; i < snake.bodySegments; i++)
+    for (int i = 0; i < snake.bodySegments; i++)
     {
-        snake.snakeBody[i] = InitializeCellValues(1, 5 - i, CELLSIZE, SNAKE);
+        snake.snakeBody[i] = InitializeCellValues(5, 5 - i, CELLSIZE, SNAKE);
+        if (i == 0)
+        {
+            snake.snakeBody[i].cell_color = snake.headColor;
+        }
+        else
+        {
+            snake.snakeBody[i].cell_color = snake.bodyColor;
+        }
     }
 
     return snake;
