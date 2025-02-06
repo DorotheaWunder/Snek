@@ -73,8 +73,7 @@ void MoveBody(Snake *snake)
 {
     for (int i = snake->bodySegments - 1; i > 0; i--)
     {
-        snake->snakeBody[i].row = snake->snakeBody[i - 1].row;
-        snake->snakeBody[i].col = snake->snakeBody[i - 1].col;
+        snake->snakeBody[i] = snake->snakeBody[i - 1];
     }
 }
 
@@ -114,8 +113,6 @@ void UpdateSnakePosition(Snake *snake, int gridWidth, int gridHeight)
     GetInput(snake);
     MoveBody(snake);
     MoveHead(snake);
-
-    Die(snake);
 
     if (OutOfBounds(snake, gridWidth, gridHeight))
     {
