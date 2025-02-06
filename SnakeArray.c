@@ -6,8 +6,8 @@ Snake InitializeSnakeValues()
 {
     Snake snake;
 
-    snake.bodySegments = 2;
-    snake.headIndex = 1;
+    snake.bodySegments = 20;
+    snake.headIndex = 19;
     snake.tailIndex = 0;
 
     snake.bodyColor = DARKGREEN;
@@ -115,6 +115,8 @@ void UpdateSnakePosition(Snake *snake, int gridWidth, int gridHeight)
     MoveBody(snake);
     MoveHead(snake);
 
+    Die(snake);
+
     if (OutOfBounds(snake, gridWidth, gridHeight))
     {
         WrapMovement(snake, gridWidth, gridHeight);
@@ -132,4 +134,13 @@ bool CollidedWithSelf(Snake *snake)
     }
 
     return false;
+}
+
+void Die(Snake *snake)
+{
+    if (CollidedWithSelf(snake))
+    {
+        snake->headColor = WHITE;
+        DrawText("GAME OVER!", 350, 400, 20, RED);
+    }
 }

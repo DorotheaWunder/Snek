@@ -1,7 +1,8 @@
 ﻿#include "raylib.h"
+#include "gamemanager.h"
 #include "grid.h"
 #include "SnakeArray.h"
-
+#include "food.h"
 
 void DrawCell(Cell *cell)
 {
@@ -46,4 +47,10 @@ void DrawSnakeArray(Snake *snake)
         snake->snakeBody[i].cell_color = snake->bodyColor;
         DrawCell(&snake->snakeBody[i]);
     }
+}
+
+void DrawFood(Cell *food)
+{
+    food->cell_color = RED;
+    DrawCell(&game.food);
 }

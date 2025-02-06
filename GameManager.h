@@ -19,8 +19,11 @@ typedef struct
     int gridHeight;
 
     Snake snake;
-    //other game elements
+    Cell food;
+
 } GameManager;
+
+extern GameManager game;//---??
 
 void InitGame();
 void UpdateGame();

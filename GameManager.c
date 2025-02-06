@@ -15,6 +15,7 @@ void InitGame()
 
     game.snake = InitializeSnakeValues();
 
+    game.food = SpawnFood();
 }
 
 void UpdateGame()
@@ -36,12 +37,14 @@ void DrawGame()
 {
     DrawLevelGrid();
     DrawSnakeArray(&game.snake);
+    DrawFood(&game.food);
 }
 
 void ResetGame(GameManager *game)
 {
     InitializeLevelGrid();
     game->snake = InitializeSnakeValues();
+    //food spawn reset
 }
 
 void GameFlow(GameManager *game)

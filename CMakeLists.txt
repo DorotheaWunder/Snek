@@ -36,7 +36,9 @@ add_executable(Snek main.c
         GameManager.h
         GameManager.c
         SnakeArray.h
-        SnakeArray.c)
+        SnakeArray.c
+        Food.h
+        Food.c)
 
 # set the include directory
 target_include_directories(Snek PRIVATE ${raylib_INCLUDE_DIRS})

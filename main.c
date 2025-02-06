@@ -11,10 +11,17 @@ int main(void)
         BeginDrawing();
 
 
+        GameManager game;
 
         ClearBackground(RAYWHITE);
+
+
         UpdateGame();
         DrawGame();
+
+        //GameManager game;
+        //GameFlow(&game);
+
 
 
         EndDrawing();

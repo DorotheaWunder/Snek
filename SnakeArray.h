@@ -34,4 +34,5 @@ bool OutOfBounds(Snake *snake, int gridWidth, int gridHeight);
 void WrapMovement(Snake *snake, int gridWidth, int gridHeight);
 void UpdateSnakePosition(Snake *snake, int gridWidth, int gridHeight);
 bool CollidedWithSelf(Snake *snake);
+void Die(Snake *snake);
 #endif //SNAKE_H
